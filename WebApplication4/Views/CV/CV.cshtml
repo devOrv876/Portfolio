@@ -1,0 +1,42 @@
+﻿@model WebApplication4.Models.PersonalStatment
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CV</title>
+</head>
+<body>
+    <div>
+        <h4>Personal Statment</h4>
+        <hr />
+        <table>
+            <tr>
+                <td>@Model.personalStatment</td>
+            </tr>
+        </table>
+
+
+
+        <dl class="dl-horizontal">
+            <dt>
+              
+            </dt>
+    
+            <dd>
+               
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
