@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Web.Configuration;
+using WebApplication4.Models;
 
 namespace WebApplication4.Controllers
 {
@@ -13,7 +14,9 @@ namespace WebApplication4.Controllers
 
         public string GetPS(string command)
         {
-            string pstatementstring = "";
+            //CVULTRACLASS.PersonalStatment ps = new CVULTRACLASS.PersonalStatment();
+            string personalStatment = "";
+
             SqlConnection con = new SqlConnection(conString);
 
             try
@@ -27,7 +30,7 @@ namespace WebApplication4.Controllers
                 {
                     while (reader.Read())
                     {
-                        pstatementstring = reader.GetString(1);
+                        personalStatment = reader.GetString(1);
                     }
                 }
             }
@@ -39,6 +42,7 @@ namespace WebApplication4.Controllers
             {
                 con.Close();
             }
+            string pstatementstring = "";
             return (pstatementstring);
         }
 

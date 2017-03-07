@@ -1,4 +1,4 @@
-﻿@model WebApplication4.Models.PersonalStatment
+﻿@model WebApplication4.ViewModel.CvViewModel
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,7 +17,24 @@
         <hr />
         <table>
             <tr>
-                <td>@Model.personalStatment</td>
+                <td>
+                    
+                    @Model.personal[0].PStatment
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                    @Model.instit[0].name
+                    @Model.instit[0].institutionAddress
+                    @Model.instit[0].studyDate
+                </td>
+                    
+            </tr>
+            <tr>
+                <td>
+                    @Model.edu[1].eduLevel
+                </td>
             </tr>
         </table>
 
