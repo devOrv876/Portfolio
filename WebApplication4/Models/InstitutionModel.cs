@@ -15,7 +15,9 @@ namespace WebApplication4.Models
         public string name { get; set; }
         public DateTime studyDate { get; set; }
         public string institutionAddress { get; set; }
-        public List <EducationModel> eduLevel_ID { get; set; }
+      
+        [ForeignKey("eduLevel_ID")]
+        public IEnumerable<EducationModel> eduLevel_ID { get; set; }
     }
     
 }

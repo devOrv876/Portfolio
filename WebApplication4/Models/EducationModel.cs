@@ -12,7 +12,7 @@ namespace WebApplication4.Models
 
     {
         [Key]
-        public int eduLevel_ID { get; set; }
+        public int eduLevel_ID { get; set; }        
         public string eduLevel { get; set; }
 
     }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebApplication4.Models;
 using WebApplication4.ViewModel;
+using Portfolio.Models;
 
 namespace WebApplication4.Controllers
 {
@@ -13,18 +14,25 @@ namespace WebApplication4.Controllers
 
 
         private CVContext cvcontext = new CVContext();
+        Model1 dbModel = new Model1();
+        
+
         // GET: CV
         public ActionResult CV()
         {
-                         
-            //List<CVContext> cv = new List<CVContext>();
-
+           
             CvViewModel model = new CvViewModel();
 
-            model.personal = cvcontext.personalstatment.ToList();
-            model.instit = cvcontext.institution.ToList();
-            model.edu = cvcontext.education.ToList();
+            //model.edu = dbModel.tblEducationLevels.ToList();
+            //model.instit = dbModel.tblInstitutions.ToList();
+            //model.personal = dbModel.tblPersonalStatements.ToList();
+            //model.qual = dbModel.tblQualifications.ToList();
 
+
+            model.edu = cvcontext.education.ToList();
+            model.qual = cvcontext.qualification.ToList();
+            model.personal = cvcontext.personal.ToList();
+            model.instit = cvcontext.institute.ToList();
 
             return View(model);
         }
@@ -33,7 +41,7 @@ namespace WebApplication4.Controllers
 }
 
 
-
+//List<CVContext> cv = new List<CVContext>();
 //EducationLevel edu = new EducationLevel
 //{
 

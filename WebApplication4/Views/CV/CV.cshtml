@@ -10,50 +10,186 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>CV</title>
+    <style>
+        table, th, td, tr {
+            border: 1px solid black;
+        }
+
+        h3 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div>
-        <h4>Personal Statment</h4>
-        <hr />
-        <table>
-            <tr>
-                <td>
-                    
-                    @Model.personal[0].PStatment
-                </td>
-            </tr>
-            <tr>
-                <td>
+        <div id="Header">
+            <div class="jumbotron">
+                <h1 style="text-align:center">Orville Miller</h1>
+                <p style="text-align:center">Contact Details Here</p>
+            </div>
+        </div>
+        <div>
+            <div id="statetment Section">
+                <div><h3>Personal Statement</h3><hr /></div>
+                <div>
+                    <p>@Model.personal[0].PStatment</p>
+                </div>
+            </div>
 
-                    @Model.instit[0].name
-                    @Model.instit[0].institutionAddress
-                    @Model.instit[0].studyDate
-                </td>
-                    
-            </tr>
-            <tr>
-                <td>
-                    @Model.edu[1].eduLevel
-                </td>
-            </tr>
-        </table>
+            <div id="education">
+                <div>
+                    <h3>Education</h3>
+                    <hr style="width:700px" />
+                </div>
+                <div class="container">
+                    <div id="Column1" class="row">
+                        @for (var m = 0; m < Model.instit.Count(); m++)
+
+                        {
+                            <div id="Education" class="row">
+                                <div id="InstitCol" class="col-md-4">
+                                    <div id="Level">
+                                        <p>
+                                            @Model.qual[m].EducationLevels.eduLevel
+                                        </p>
+
+                                    </div>
+                                    <div id="InstituteName">
+                                        <p>
+                                            @Model.instit[m].institutionAddress.Split(',').FirstOrDefault()
+                                        </p>
+                                    </div>
+                                    <div id="StudyYear">
+                                        <p>
+                                            @Model.instit[m].studyDate.Year
+                                        </p>
+                                        <hr class="col-lg-1" />
+                                    </div>
+                                </div>
+                                <div id="SubjectsCol" class="col-md-4">
+
+                                    @for (var mod = 0; mod < Model.qual.Count(); mod++)
+
+                                    { <p><b>@Model.qual[mod].module:</b></p><p>@Model.qual[mod].grade</p> }
 
 
 
-        <dl class="dl-horizontal">
-            <dt>
-              
-            </dt>
-    
-            <dd>
-               
-            </dd>
-    
-        </dl>
+                                    <div id="edumodule">
+                                        @for (var e = 0; e < 1; e++)
+                                        {
+                                        <div>
+                                            <div id="modDetail">
+                                                <div id="CompSciMods">
+                                                    <ul>
+
+
+                                                        @if (Model.qual[m].moduleDetail != null)
+                                                            {
+                                                                string[] stringtest = Model.qual[e].moduleDetail.Split(',');
+                                                                for (int j = 0; j < stringtest.Length; j++)
+                                                                {
+                                                            <li>
+                                                                @stringtest[j]
+                                                            </li>
+                                                                }
+                                                            }
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        }
+                                    </div>
+                                </div>
+                                <div id="instAddressCOL" class="col-md-4">
+                                    <div>
+                                        <p>
+                                            @Model.instit[m].institutionAddress
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+
+                    <br />
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div>
+            <table>
+                <tr>
+                    <td id="inst">
+                        @Model.instit[0].name
+                        <br />
+                        <br />
+                        @Model.instit[0].studyDate.Year
+                    </td>
+                    <td>
+                        @Model.qual[0].moduleDetail
+                    </td>
+                    <td>
+                        @Model.instit[0].institutionAddress
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <p>
-        
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+
 </body>
+
+
+
+
+
+
+
 </html>
+
+
+
+
+
+@*<div class="col-md-4">
+        @for (var m = 0; m < Model.qual.Count; m++)
+        {
+            <div id="eduModule">
+                <p>
+                    <b>@Model.qual[m].module:</b> @Model.qual[m].grade
+                </p>
+            </div>
+            <div id="modDetail">
+                <div id="CompSciMods">
+                    <ul>
+                        @if (Model.qual[m].moduleDetail != null)
+                        {
+                            string[] stringtest = Model.qual[m].moduleDetail.Split(',');
+                            for (int j = 0; j < stringtest.Length; j++)
+                            {
+                                <li>
+                                    @stringtest[j]
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-4">
+        @for (var t = 0; t < Model.instit.Count; t++)
+        {
+            <div>
+                <p>
+                    @Model.instit[t].institutionAddress
+                </p>
+            </div>
+        }
+    </div>*@

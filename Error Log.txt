@@ -1,0 +1,60 @@
+
+[Error Log] 08/03/2017
+
+One or more validation errors were detected during model generation:\r\n\r\n
+
+WebApplication4.Models.EducationLevel: : EntityType 'EducationLevel' has no key defined. Define the key for this EntityType.
+
+WebApplication4.Models.Institution: : EntityType 'Institution' has no key defined. Define the key for this EntityType.
+
+WebApplication4.Models.Qualification: : EntityType 'Qualification' has no key defined. Define the key for this EntityType.
+
+education: EntityType: EntitySet 'education' is based on type 'EducationLevel' that has no keys defined.
+
+institute: EntityType: EntitySet 'institute' is based on type 'Institution' that has no keys defined.
+
+qualification: EntityType: EntitySet 'qualification' is based on type 'Qualification' that has no keys defined.
+
+set keys for each entity set
+---------------------
+
+
+Unable to set field/property eduLevel_ID on entity type WebApplication4.Models.Institution. See InnerException for details."}
+
+
+Unable to cast object of type 'WebApplication4.Models.EducationLevel' to type 'System.Collections.Generic.List`1[WebApplication4.Models.EducationLevel]
+
+change property of foreign key from list<educationevl> to type Education level
+-----------------------------
+
+
+The ForeignKeyAttribute on property 'eduLevel_ID' on type 'WebApplication4.Models.Institution' is not valid. 
+The foreign key name 'eduLevel_ID' was not found on the dependent type 'WebApplication4.Models.Institution'. 
+The Name value should be a comma separated list of foreign key property names.
+
+
+The ForeignKeyAttribute on property 'eduLevel_ID' on type 'WebApplication4.Models.Qualification' is not valid. 
+The foreign key name 'EducationLevel' was not found on the dependent type 'WebApplication4.Models.EducationLevel'. 
+The Name value should be a comma separated list of foreign key property names."}
+
+
+The ForeignKeyAttribute on property 'eduLevel_ID' on type 'WebApplication4.Models.Qualification' is not valid. 
+The foreign key name 'EducationLevel' was not found on the dependent type 'WebApplication4.Models.Qualification'. 
+The Name value should be a comma separated list of foreign key property names.
+
+The ForeignKeyAttribute on property 'EducationLevel' on type 'WebApplication4.Models.Institution' is not valid. 
+The foreign key name 'EducationLevel' was not found on the dependent type 'WebApplication4.Models.EducationLevel'. 
+The Name value should be a comma separated list of foreign key property names.
+
+One or more validation errors were detected during model generation:\r\n\r\n
+WebApplication4.Models.Qualification: : EntityType 'Qualification' has no key defined. 
+Define the key for this EntityType.\r\n
+qualification: EntityType: EntitySet 'qualification' is based on type 'Qualification' that has no keys defined.
+
+Unable to determine the principal end of an association between the types 'WebApplication4.Models.Qualification' and 'WebApplication4.Models.EducationLevel'. 
+The principal end of this association must be explicitly configured using either the relationship fluent API or data annotations.
+
+
+The ForeignKeyAttribute on property 'EducationLevels' on type 'WebApplication4.Models.Institution' is not valid. 
+The foreign key name 'EducationLevels' was not found on the dependent type 'WebApplication4.Models.Institution'. 
+The Name value should be a comma separated list of foreign key property names."}

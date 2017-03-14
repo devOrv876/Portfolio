@@ -17,8 +17,15 @@ namespace WebApplication4.Models
         public string module { get; set; }
         public string moduleDetail { get; set; }
         public string grade { get; set; }
-        public List<EducationModel> eduLevel_ID { get; set; }
-        public List<InstitutionModel> inst_ID { get; set; }
+
+        
+        public IEnumerable<EducationModel> eduLevel_ID { get; set; }
+
+        
+        public IEnumerable<InstitutionModel> inst_ID { get; set; }
+
+       
 
     }
 }
+
