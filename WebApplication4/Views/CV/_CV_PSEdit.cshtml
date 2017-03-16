@@ -1,0 +1,39 @@
+﻿@model WebApplication4.ViewModel.CvViewModel
+
+@{
+    ViewBag.Title = "Ps Edit";
+}
+
+    <<div class="modal fade" id="PsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>*@
+                <h4 class="modal-title" id="myModalLabel">Edit This</h4>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("CvEdit", "CV", FormMethod.Post))
+                {
+                    <div>
+                        <fieldset>                            
+                            <form>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.personal, "Edit Personal Statement")
+                                    @Html.TextAreaFor(m => m.personal[0].PStatment, new { @class = "form-control" })                                  
+                                    
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+
+                        </fieldset>
+                    </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" value="submit">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

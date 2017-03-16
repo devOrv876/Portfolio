@@ -15,7 +15,7 @@ namespace WebApplication4.Models
         public PersonalStatment()
         {
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
         public int iD { get; set; }
         public string PStatment { get; set; }
@@ -31,7 +31,7 @@ namespace WebApplication4.Models
             //Institutions = new HashSet<Institution>();
             //Qualifications = new HashSet<Qualification>();
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
         public int eduLevel_ID { get; set; }
         public string eduLevel { get; set; }
@@ -49,6 +49,7 @@ namespace WebApplication4.Models
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int inst_ID { get; set; }
         public string name { get; set; }
         public DateTime studyDate { get; set; }
@@ -69,6 +70,7 @@ namespace WebApplication4.Models
         {
         }
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int qual_ID { get; set; }
         public string qualification { get; set; }
         public string module { get; set; }

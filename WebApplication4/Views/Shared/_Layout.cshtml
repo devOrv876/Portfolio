@@ -33,6 +33,10 @@
     </div>
     <div class="container body-content">
         @RenderBody()
+        @Html.Partial("_CV_PSEdit")
+        @Html.Partial("_CV_EduEdit")      
+
+
         <hr />
         <footer>
             <p>@DateTime.Now.Year - Orville Miller</p>
@@ -42,5 +46,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+
 </body>
 </html>
