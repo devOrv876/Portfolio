@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace WebApplication4.Controllers
 {
-    public class WorkController : Controller
+    public class ProjectsController : Controller
     {
         // GET: Work
-        public ActionResult Work()
+        public ActionResult Project()
         {
             ViewBag.Message = "My Work";
             return View();

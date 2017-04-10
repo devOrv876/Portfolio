@@ -1,5 +1,7 @@
 ﻿@model WebApplication4.ViewModel.CvViewModel
 
+@using WebApplication4.Models;
+
 @{
     ViewBag.Title = "CV2";
 }
@@ -15,9 +17,23 @@
                 @using (Html.BeginForm("CVEdit", "CV", FormMethod.Post))
                 {
                     <div>
-                        <fieldset>                                                  
-                            
-                        </fieldset>
+                        
+                      
+
+                        @for (int a = 0; a < 6; a++)
+                        { 
+
+                            @foreach (Qualification i in Model.qual)
+                             {
+                                
+                                    <div>
+                                       @Html.TextAreaFor(m => m.qual[a].qualification))
+                                   </div>
+  
+                                 }
+                                
+                             }
+                        
                     </div>
                 }
             </div>

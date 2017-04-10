@@ -39,6 +39,21 @@ namespace WebApplication4.Controllers
         }
 
 
+        [HttpGet]
+        public ActionResult FullEdit()
+        {
+            return View();
+
+        }
+
+        [HttpPost]
+        public ActionResult FullEdit(CvViewModel model)
+        {
+            updatePs(model);
+            updateEdu(model);
+            
+            return RedirectToAction("CV");
+        }
 
         [HttpGet]
         public ActionResult CvEdit()
@@ -51,10 +66,7 @@ namespace WebApplication4.Controllers
         [HttpPost]
         public ActionResult CvEdit(CvViewModel model)
         {
-
             updatePs(model);
-                        
-
 
             return RedirectToAction("CV");
         }
@@ -64,13 +76,14 @@ namespace WebApplication4.Controllers
         {
             PersonalStatment ps;
             int id = model.personal[0].iD;
-            //1. Get student from DB
+            //1. Get statement from DB
             using (var db = new CVContext())
             {
                 ps = db.personal.Where(s => s.iD == id).FirstOrDefault();
             }
 
-            //2. change student name in disconnected mode (out of ctx scope)
+
+            //2. change statement in disconnected mode (out of ctx scope)
             if (ps != null)
             {
                 ps.PStatment = model.personal[0].PStatment;
@@ -90,8 +103,36 @@ namespace WebApplication4.Controllers
 
         public void updateEdu(CvViewModel model)
         {
+            PersonalStatment ps;
+            int id = model.qual[0].EduLevel_ID.Value;
+            
+            //1. Get statement from DB
+            using (var db = new CVContext())
+            {
+                ps = db.personal.Where(s => s.iD == id).FirstOrDefault();
 
+            }
+
+            //2. change statement in disconnected mode (out of ctx scope)
+            if (ps != null)
+            {
+                ps.PStatment = model.personal[0].PStatment;
+            }
+
+            //save modified entity using new Context
+            using (var dbtx = new CVContext())
+            {
+                //3. Mark entity as modified
+                dbtx.Entry(ps).State = EntityState.Modified;
+              
+                //4. call SaveChanges
+                dbtx.SaveChanges();
+
+            }
         }
+
+
+
 
     }
 }

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model WebApplication4.ViewModel.CvViewModel
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -33,8 +35,8 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        @Html.Partial("_CV_PSEdit")
-        @Html.Partial("_CV_EduEdit")      
+        @Html.Partial("~/Views/CV/Edit_Pages/_CV_PSEdit.cshtml")
+        @Html.Partial("~/Views/CV/Edit_pages/_CV_EduEdit.cshtml")      
 
 
         <hr />

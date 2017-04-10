@@ -59,11 +59,12 @@
                     @i.PStatment
                 }
 
+
                 @*<p>@Model.personal[0].PStatment</p>*@
 
 
                 
-                <button type="button" class="btn btn-group-xs" data-toggle="modal" data-target="#PsModal">
+                <button type="button" class="btn btn-group-xs pull-right" data-toggle="modal" data-target="#PsModal">
                     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>                   
                 </button>
             </div>
@@ -72,9 +73,9 @@
         <h3>Education <span class="glyphicon glyphicon-education" aria-hidden="true"></span> </h3>
         <hr style="width:700px" />
 
-        <button type="button" class="btn btn-group-xs" data-toggle="modal" data-target="#EduEditModal">
+        @*<button type="button" class="btn btn-group-xs pull-right" data-toggle="modal" data-target="#EduEditModal">
             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        </button>
+        </button>*@
         
         <div class="row">
             @foreach (var i in Model.instit)
@@ -82,14 +83,16 @@
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <b>@i.EducationLevels.eduLevel</b> -
-
-                            @i.institutionAddress.Split(',').FirstOrDefault()
-                            <br />
+                            <div>
+                                <button type="button" class="btn btn-group-xs pull-right" data-toggle="modal" data-target="#EduEditModal">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <b>@i.EducationLevels.eduLevel</b> - @i.institutionAddress.Split(',').FirstOrDefault()
+                            <br/>
                             @i.studyDate.Year
-                            @*<button type="button" class="btn btn-group-xs" data-toggle="modal" data-target="#myModal">
-                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                            </button>*@
+
+                         
                         </div>
                         <div class="panel-body">
                             <p>

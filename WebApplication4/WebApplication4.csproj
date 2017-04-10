@@ -305,10 +305,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Work\Work.cshtml" />
     <Content Include="Views\CV\CV.cshtml" />
-    <Content Include="Views\CV\_CV_PSEdit.cshtml" />
+    <Content Include="Views\CV\Edit_pages\_CV_PSEdit.cshtml" />
     <Content Include="Views\CV\CV2 - Copy.cshtml" />
-    <Content Include="Views\CV\_CV_EduEdit.cshtml" />
-    <Content Include="Views\CV\CV2 - Copy %283%29.cshtml" />
+    <Content Include="Views\CV\Edit_pages\_CV_EduEdit.cshtml" />
+    <Content Include="Views\CV\Edit_pages\CV2 - Copy %283%29.cshtml" />
+    <Content Include="Views\CV\Edit_pages\FullEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -18,22 +18,22 @@
                         <fieldset>                            
                             <form>
                                 <div class="form-group">
-                                    @Html.LabelFor(m => m.personal, "Edit Personal Statement")
-                                    @Html.TextAreaFor(m => m.personal[0].PStatment, new { @class = "form-control" })                                  
+                                    @*@Html.LabelFor(m => m.personal, "Edit Personal Statement")
+                                    @Html.TextAreaFor(m => m.personal[0].PStatment, new { @class = "form-control" })*@                                 
                                     
                                 </div>
-
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary" value="submit">Save changes</button>
+                                </div>
                             </form>
 
                         </fieldset>
                     </div>
+                   
                 }
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" value="submit">Save changes</button>
-            </div>
+            
         </div>
     </div>
 </div>

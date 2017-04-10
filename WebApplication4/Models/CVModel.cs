@@ -8,6 +8,7 @@ using System.Web;
 namespace WebApplication4.Models
 {
 
+
     [Table("PersonalStatment")]
     public class PersonalStatment
     {
@@ -35,6 +36,7 @@ namespace WebApplication4.Models
         [Key]
         public int eduLevel_ID { get; set; }
         public string eduLevel { get; set; }
+
 
     }
 
